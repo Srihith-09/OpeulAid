@@ -1,23 +1,31 @@
-index.html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OpeulAid</title>
+  <title>Premium Service Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>OpeulAid</h1>
-    <p>Premium On-Demand Professionals for Every Need</p>
-  </header>
 
-  <section id="hero">
-    <h2>Hire Trusted Experts Instantly</h2>
-    <p>From technicians to coders & editors — everything in one place.</p>
-  </section>
+<header>
+  <h1>Welcome to Our Premium Services</h1>
+  <p>Share your location to see services near you</p>
+  <button id="locationBtn">Share Location</button>
+</header>
 
-  <script src="script.js"></script>
+<section class="services hidden" id="servicesSection">
+  <h2>Select a Service</h2>
+  <div class="services-container" id="servicesContainer"></div>
+</section>
+
+<section class="employees hidden" id="employeesSection">
+  <h2>Our Employees</h2>
+  <div class="employees-container" id="employeesContainer"></div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
+

@@ -1,73 +1,94 @@
+/* -------------------
+   Global Styles
+------------------- */
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
-  background: #f2f2f5;
-  color: #111;
+  background: #111; /* Dark theme */
+  color: #fff;
+  line-height: 1.6;
   overflow-x: hidden;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+}
+
+/* -------------------
+   Buttons
+------------------- */
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 0.8rem 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(90deg, #0071e3, #005bb5);
+  color: #fff;
+  font-size: 1rem;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* -------------------
+   Landing Page Section
+------------------- */
 header {
-  padding: 4rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  background: #fff;
-  box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+  padding: 6rem 2rem;
+  background: #000; 
 }
 
 header h1 {
-  font-weight: 700;
   font-size: 3rem;
   margin-bottom: 0.5rem;
 }
 
 header p {
-  font-weight: 400;
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
-button {
-  padding: 0.8rem 1.5rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #0071e3, #005bb5);
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.landing-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
 }
 
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-}
-
-section {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-section h2 {
-  font-weight: 600;
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-}
-
-.services-container, .employees-container {
+/* -------------------
+   Card Layout (Services/Employees)
+------------------- */
+.services-container,
+.employees-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
+  padding: 2rem 0;
 }
 
 .card {
-  background: #fff;
+  background: #1a1a1a;
   border-radius: 20px;
   padding: 2rem 1.5rem;
-  width: 250px;
+  width: 260px;
   text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
   transition: all 0.4s ease;
   opacity: 0;
   transform: translateY(30px);
@@ -76,7 +97,7 @@ section h2 {
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 50px rgba(255, 255, 255, 0.1);
 }
 
 .card img {
@@ -88,18 +109,74 @@ section h2 {
 }
 
 .card h3 {
-  font-weight: 600;
   margin-bottom: 1rem;
 }
 
-.hidden {
-  display: none;
+/* -------------------
+   Card Buttons
+------------------- */
+button.card-btn {
+  margin: 0.3rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: #fff;
+}
+
+button.card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* -------------------
+   Section Headings
+------------------- */
+section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+section h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+
+/* -------------------
+   Animations
+------------------- */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeIn {
   to { opacity: 1; }
 }
 
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
+/* -------------------
+   Hide elements initially
+------------------- */
+.hidden {
+  display: none;
 }
+
+/* -------------------
+   Responsive
+------------------- */
+@media screen and (max-width: 768px) {
+  .card {
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+}
+

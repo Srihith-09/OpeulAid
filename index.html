@@ -1,56 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpeulAid</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OpeulAid — Premium Services</title>
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main id="app">
+    <!-- HERO / HOME -->
+    <section id="hero" class="screen">
+      <div class="hero-inner">
+        <h1 class="hero-title">Welcome to OpeulAid</h1>
+        <p class="hero-sub">Fast local help. Verified partners. Smooth experience.</p>
 
-    <div id="home-page" class="page">
-        <h1>Welcome to OpeulAid</h1>
-        <div class="button-row">
-            <button onclick="showHire()">Hire</button>
-            <button>Become a Partner</button>
-            <button>Login</button>
-            <button>Sign Up</button>
-            <button>Help</button>
+        <div class="cta-row">
+          <button class="cta primary" id="btn-hire">Hire</button>
+          <button class="cta" id="btn-partner">Become a Partner</button>
+          <button class="cta" id="btn-login">Login</button>
+          <button class="cta" id="btn-signup">Sign Up</button>
+          <button class="cta" id="btn-help">Help</button>
         </div>
-    </div>
 
-    <div id="hire-page" class="page hidden">
+        <p class="muted small" id="location-status"></p>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="screen hidden">
+      <div class="section-inner">
         <h2>Our Services</h2>
+        <p class="muted" id="services-note">Pick a service — we’ll show available partners nearby.</p>
+        <div id="services-grid" class="grid"></div>
 
-        <div class="service-card" onclick="openService('plumbing')">Plumbing</div>
-        <div class="service-card" onclick="openService('cleaning')">Cleaning</div>
-        <div class="service-card" onclick="openService('electrical')">Electrical</div>
+        <div class="controls">
+          <button class="ghost" id="services-back">← Back</button>
+        </div>
+      </div>
+    </section>
 
-        <button class="back-btn" onclick="goHome()">← Back</button>
+    <!-- WORKERS -->
+    <section id="workers" class="screen hidden">
+      <div class="section-inner">
+        <h2 id="workers-title">Workers</h2>
+        <p class="muted" id="workers-sub">Select a partner to call or message.</p>
+
+        <div id="workers-grid" class="grid workers-grid"></div>
+
+        <div class="controls">
+          <button class="ghost" id="workers-back">← Back</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHAT -->
+    <section id="chat" class="screen hidden">
+      <div class="section-inner chat-inner">
+        <div class="chat-header">
+          <button class="ghost" id="chat-back">← Back</button>
+          <div>
+            <h3 id="chat-with">Chat</h3>
+            <p class="muted" id="chat-sub">Messages are local for now (demo).</p>
+          </div>
+          <div style="flex:1"></div>
+        </div>
+
+        <div id="chat-window" class="chat-window"></div>
+
+        <form id="chat-form" class="chat-form" onsubmit="return false;">
+          <input id="chat-input" placeholder="Write a message..." autocomplete="off" />
+          <button id="chat-send" class="cta small">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-hidden="true">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close">✕</button>
+      <div id="modal-content"></div>
+      <div style="text-align:right; margin-top:18px;">
+        <button class="ghost" id="modal-ok">OK</button>
+      </div>
     </div>
+  </div>
 
-    <div id="service-detail" class="page hidden">
-        <h2 id="service-title"></h2>
-
-        <p>Choose an option:</p>
-
-        <button onclick="callPerson()">📞 Call</button>
-        <button onclick="openChat()">💬 Text</button>
-
-        <button class="back-btn" onclick="showHire()">← Back</button>
-    </div>
-
-    <div id="chat-page" class="page hidden">
-        <h2>Messaging</h2>
-
-        <div id="chat-box"></div>
-
-        <input type="text" id="chat-input" placeholder="Type a message...">
-        <button onclick="sendMessage()">Send</button>
-
-        <button class="back-btn" onclick="goHome()">← Home</button>
-    </div>
-
-    <script src="script.js"></script>
+  <!-- Partner Signup/Login Modals (hidden container forms rendered into modal-content) -->
+  <script src="script.js" defer></script>
 </body>
 </html>
+

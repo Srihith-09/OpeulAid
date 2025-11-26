@@ -1,77 +1,45 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-    background-color: #0d0d0d;
-    color: white;
-    text-align: center;
+function showHire() {
+    document.getElementById("home-page").classList.add("hidden");
+    document.getElementById("hire-page").classList.remove("hidden");
+    document.getElementById("service-detail").classList.add("hidden");
+    document.getElementById("chat-page").classList.add("hidden");
 }
 
-.page {
-    padding: 40px;
+function goHome() {
+    document.getElementById("home-page").classList.remove("hidden");
+    document.getElementById("hire-page").classList.add("hidden");
+    document.getElementById("service-detail").classList.add("hidden");
+    document.getElementById("chat-page").classList.add("hidden");
 }
 
-.hidden {
-    display: none;
+let currentService = "";
+
+function openService(name) {
+    currentService = name;
+    document.getElementById("service-title").innerText =
+        name.charAt(0).toUpperCase() + name.slice(1) + " Service";
+
+    document.getElementById("hire-page").classList.add("hidden");
+    document.getElementById("service-detail").classList.remove("hidden");
 }
 
-.button-row button {
-    background: #1a1a1a;
-    color: white;
-    padding: 14px 30px;
-    margin: 10px;
-    border: 1px solid #333;
-    border-radius: 12px;
-    cursor: pointer;
-    font-size: 18px;
-    transition: 0.3s;
+function callPerson() {
+    alert("Call this number: +91 9876543210");
 }
 
-.button-row button:hover {
-    background: #333;
+function openChat() {
+    document.getElementById("service-detail").classList.add("hidden");
+    document.getElementById("chat-page").classList.remove("hidden");
 }
 
-.service-card {
-    background: #121212;
-    margin: 15px auto;
-    padding: 20px;
-    width: 50%;
-    border-radius: 15px;
-    border: 1px solid #333;
-    cursor: pointer;
-    transition: 0.3s;
+function sendMessage() {
+    let input = document.getElementById("chat-input");
+    let chatBox = document.getElementById("chat-box");
+
+    if (input.value.trim() === "") return;
+
+    chatBox.innerHTML += `<div>You: ${input.value}</div>`;
+    input.value = "";
+    chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-.service-card:hover {
-    transform: scale(1.03);
-    background: #1d1d1d;
-}
-
-.back-btn {
-    margin-top: 40px;
-    padding: 10px 25px;
-    font-size: 18px;
-    border-radius: 10px;
-    background: #222;
-    border: 1px solid #555;
-    color: white;
-    cursor: pointer;
-}
-
-#chat-box {
-    width: 80%;
-    margin: 20px auto;
-    height: 250px;
-    background: #1a1a1a;
-    border-radius: 10px;
-    overflow-y: scroll;
-    padding: 15px;
-    border: 1px solid #333;
-}
-
-#chat-input {
-    width: 70%;
-    padding: 10px;
-    border-radius: 10px;
-    border: none;
-}

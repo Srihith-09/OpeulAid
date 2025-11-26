@@ -1,182 +1,79 @@
-/* -------------------
-   Global Styles
-------------------- */
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: #111; /* Dark theme */
-  color: #fff;
-  line-height: 1.6;
-  overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    background-color: #0d0d0d;
+    color: white;
+    text-align: center;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.page {
+    padding: 40px;
 }
 
-h1, h2, h3, h4 {
-  font-weight: 600;
-  margin: 0 0 1rem 0;
-}
-
-/* -------------------
-   Buttons
-------------------- */
-button {
-  border: none;
-  border-radius: 12px;
-  padding: 0.8rem 1.6rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  background: linear-gradient(90deg, #0071e3, #005bb5);
-  color: #fff;
-  font-size: 1rem;
-}
-
-button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-}
-
-/* -------------------
-   Landing Page Section
-------------------- */
-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 6rem 2rem;
-  background: #000; 
-}
-
-header h1 {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-
-header p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.landing-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-/* -------------------
-   Card Layout (Services/Employees)
-------------------- */
-.services-container,
-.employees-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem 0;
-}
-
-.card {
-  background: #1a1a1a;
-  border-radius: 20px;
-  padding: 2rem 1.5rem;
-  width: 260px;
-  text-align: center;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-  transition: all 0.4s ease;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeUp 0.6s forwards;
-}
-
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 50px rgba(255, 255, 255, 0.1);
-}
-
-.card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 1rem;
-}
-
-.card h3 {
-  margin-bottom: 1rem;
-}
-
-/* -------------------
-   Card Buttons
-------------------- */
-button.card-btn {
-  margin: 0.3rem;
-  padding: 0.5rem 1rem;
-  font-size: 0.95rem;
-  border-radius: 10px;
-  background: linear-gradient(90deg, #00c6ff, #0072ff);
-  color: #fff;
-}
-
-button.card-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-}
-
-/* -------------------
-   Section Headings
-------------------- */
-section {
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-section h2 {
-  font-size: 2rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-  opacity: 0;
-  animation: fadeIn 1s forwards;
-}
-
-/* -------------------
-   Animations
-------------------- */
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-
-/* -------------------
-   Hide elements initially
-------------------- */
 .hidden {
-  display: none;
+    display: none;
 }
 
-/* -------------------
-   Responsive
-------------------- */
-@media screen and (max-width: 768px) {
-  .card {
-    width: 90%;
-  }
-
-  header h1 {
-    font-size: 2.2rem;
-  }
-
-  header p {
-    font-size: 1rem;
-  }
+.button-row button {
+    background: #1a1a1a;
+    color: white;
+    padding: 14px 30px;
+    margin: 10px;
+    border: 1px solid #333;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
 }
+
+.button-row button:hover {
+    background: #333;
+}
+
+.service-card {
+    background: #121212;
+    margin: 15px auto;
+    padding: 20px;
+    width: 50%;
+    border-radius: 15px;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: scale(1.03);
+    background: #1d1d1d;
+}
+
+.back-btn {
+    margin-top: 40px;
+    padding: 10px 25px;
+    font-size: 18px;
+    border-radius: 10px;
+    background: #222;
+    border: 1px solid #555;
+    color: white;
+    cursor: pointer;
+}
+
+#chat-box {
+    width: 80%;
+    margin: 20px auto;
+    height: 250px;
+    background: #1a1a1a;
+    border-radius: 10px;
+    overflow-y: scroll;
+    padding: 15px;
+    border: 1px solid #333;
+}
+
+#chat-input {
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
 

@@ -120,6 +120,23 @@ h2{ margin:0; font-size:28px; font-weight:700 }
   .hero-sub{ font-size:1rem }
   .chat-window{ height:320px }
 }
+.help-item {
+  margin: 15px 0;
+  font-size: 1.2rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.contact-link {
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  opacity: 0.8;
+}
 
 
 

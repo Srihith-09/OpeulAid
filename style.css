@@ -137,27 +137,25 @@ h2{ margin:0; font-size:28px; font-weight:700 }
 .contact-link:hover {
   opacity: 0.8;
 }
-<!-- HELP SECTION -->
-<section id="help" class="page hidden">
-    <h2>Need Help?</h2>
-    <p>We're available 24/7. Contact us anytime.</p>
+/* Help Section Fixes */
+.help-item {
+    margin: 15px 0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
 
-    <div class="help-item">
-        <span>📞 Call us:</span>
-        <a href="tel:+919885588412" class="help-link">
-            +91 98855 88412
-        </a>
-    </div>
+.help-link {
+    color: white !important;
+    text-decoration: none;
+    font-weight: 600;
+}
 
-    <div class="help-item">
-        <span>📧 Email us:</span>
-        <a class="help-link"
-           href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=support.opeulaid@gmail.com"
-           target="_blank">
-            support.opeulaid@gmail.com
-        </a>
-    </div>
-</section>
+.help-link:hover {
+    opacity: 0.8;
+}
 
 
 
